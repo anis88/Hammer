@@ -1,0 +1,4 @@
+*.rb
+*.css
+!style.min.css
+.sass-cache

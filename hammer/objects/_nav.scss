@@ -1,0 +1,83 @@
+/*------------------------------------*\
+    $NAV
+\*------------------------------------*/
+/**
+ * Nav abstraction as per: csswizardry.com/2011/09/the-nav-abstraction
+ * When used on an `ol` or `ul`, this class throws the list into horizontal mode
+ * e.g.:
+ *
+  <ul class=nav>
+    <a href=# class=nav-item>Home</a>
+    <a href=# class=nav-item>About</a>
+    <a href=# class=nav-item>Portfolio</a>
+    <a href=# class=nav-item>Contact</a>
+  </ul>
+ *
+ */
+
+.nav-item {
+  display: inline-block;
+  padding: 0.9375rem 1.875rem;
+  text-decoration: none;
+}
+
+/**
+ * `.nav--stacked` extends `.nav` and throws the list into vertical mode, e.g.:
+ *
+  <ul class=nav>
+    <a href=# class=nav-item nav-item--stacked>Home</a>
+    <a href=# class=nav-item nav-item--stacked>About</a>
+    <a href=# class=nav-item nav-item--stacked>Portfolio</a>
+    <a href=# class=nav-item nav-item--stacked>Contact</a>
+  </ul>
+ *
+ */
+
+.nav-item--stacked{
+  display: block;
+}
+
+/**
+ * `.nav--banner` extends `.nav` and centres the list, e.g.:
+ *
+  <ul class=nav nav--banner>
+    <a href=# class=nav-item nav-item--stacked>Home</a>
+    <a href=# class=nav-item nav-item--stacked>About</a>
+    <a href=# class=nav-item nav-item--stacked>Portfolio</a>
+    <a href=# class=nav-item nav-item--stacked>Contact</a>
+  </ul>
+ *
+ */
+.nav--banner{
+  text-align:center;
+}
+
+/**
+ * Give nav links a big, blocky hit area. Extends `.nav`, e.g.:
+ *
+   <ul class="nav  nav--block">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+.nav--block{
+    line-height:1;
+    /**
+     * Remove whitespace caused by `inline-block`.
+     */
+    letter-spacing:-0.31em;
+    word-spacing:-0.43em;
+    white-space:nowrap;
+
+    > li{
+        letter-spacing:normal;
+        word-spacing:normal;
+
+        > a{
+            padding:$half-spacing-unit;
+        }
+    }
+}
